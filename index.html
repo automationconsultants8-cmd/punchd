@@ -222,7 +222,65 @@
     }
 
     .hero-content {
-      max-width: 800px;
+      max-width: 900px;
+    }
+
+    /* Hero Logo */
+    .hero-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .hero-logo-icon {
+      width: 120px;
+      height: 120px;
+      background: var(--gradient);
+      border-radius: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      box-shadow: 0 20px 60px rgba(168, 85, 247, 0.3);
+      position: relative;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .hero-logo-icon::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 35px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+      z-index: -1;
+    }
+
+    .hero-logo-icon svg {
+      width: 64px;
+      height: 64px;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .hero-logo-text {
+      font-size: 56px;
+      font-weight: 800;
+      letter-spacing: -2px;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-logo-byline {
+      font-size: 14px;
+      color: var(--text-muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 4px;
     }
 
     .hero-badge {
@@ -253,7 +311,7 @@
     }
 
     .hero h1 {
-      font-size: 64px;
+      font-size: 56px;
       font-weight: 800;
       line-height: 1.1;
       margin-bottom: 24px;
@@ -619,6 +677,75 @@
       justify-content: center;
     }
 
+    /* Founders Section */
+    .founders {
+      position: relative;
+      z-index: 1;
+      padding: 100px 48px;
+      text-align: center;
+      background: linear-gradient(180deg, transparent 0%, rgba(168, 85, 247, 0.03) 50%, transparent 100%);
+    }
+
+    .founders-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .founders-quote {
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 1.5;
+      margin-bottom: 32px;
+      letter-spacing: -0.5px;
+    }
+
+    .founders-quote span {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .founders-text {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    .founders-names {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+    }
+
+    .founder {
+      text-align: center;
+    }
+
+    .founder-avatar {
+      width: 64px;
+      height: 64px;
+      background: var(--gradient);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0 auto 12px;
+    }
+
+    .founder-name {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .founder-title {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
     /* Footer */
     footer {
       position: relative;
@@ -756,6 +883,21 @@
       }
 
       .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero-logo-icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 20px;
+      }
+
+      .hero-logo-icon svg {
+        width: 44px;
+        height: 44px;
+      }
+
+      .hero-logo-text {
         font-size: 40px;
       }
 
@@ -777,6 +919,19 @@
       .pricing-grid,
       .steps-grid {
         grid-template-columns: 1fr;
+      }
+
+      .founders {
+        padding: 60px 24px;
+      }
+
+      .founders-quote {
+        font-size: 22px;
+      }
+
+      .founders-names {
+        flex-direction: column;
+        gap: 32px;
       }
 
       .footer-grid {
@@ -832,6 +987,18 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
+      <!-- Big Hero Logo -->
+      <div class="hero-logo">
+        <div class="hero-logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 10"/>
+          </svg>
+        </div>
+        <div class="hero-logo-text">Punch'd</div>
+        <div class="hero-logo-byline">by krynovo</div>
+      </div>
+
       <div class="hero-badge">
         <div class="hero-badge-dot"></div>
         Now with AI Face Verification
@@ -1056,6 +1223,27 @@
     </div>
   </section>
 
+  <!-- Founders Section -->
+  <section class="founders">
+    <div class="founders-content">
+      <div class="section-label">Our Story</div>
+      <p class="founders-quote">"We built Punch'd because <span>time theft shouldn't be the cost</span> of doing business in construction."</p>
+      <p class="founders-text">As young entrepreneurs, we saw firsthand how construction companies struggled with outdated time tracking methods. Buddy punching, ghost entries, and manual timesheets were bleeding companies dry. We knew there had to be a better way — so we built it. Punch'd combines AI, GPS, and real-time analytics to give you complete control over your workforce.</p>
+      <div class="founders-names">
+        <div class="founder">
+          <div class="founder-avatar">JS</div>
+          <div class="founder-name">Jude Smith</div>
+          <div class="founder-title">Co-Founder</div>
+        </div>
+        <div class="founder">
+          <div class="founder-avatar">MS</div>
+          <div class="founder-name">Manav Sharma</div>
+          <div class="founder-title">Co-Founder</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer>
     <div class="footer-grid">
@@ -1106,7 +1294,7 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -1122,4 +1310,11 @@
     window.addEventListener('scroll', () => {
       const nav = document.querySelector('nav');
       if (window.scrollY > 50) {
-        nav.style.ba
+        nav.style.background = 'rgba(9, 9, 11, 0.95)';
+      } else {
+        nav.style.background = 'rgba(9, 9, 11, 0.8)';
+      }
+    });
+  </script>
+</body>
+</html>
