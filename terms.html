@@ -4,316 +4,192 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terms of Service | Punch'd</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⏱️</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --primary: #a855f7;
-      --dark: #0a0a0f;
-      --dark-lighter: #12121a;
-      --dark-card: #1a1a25;
-      --text: #ffffff;
-      --text-muted: #9ca3af;
-      --gradient: linear-gradient(135deg, #a855f7, #ec4899);
+      --gold: #C9A227;
+      --text: #2d2d2d;
+      --text-light: #5a5a5a;
+      --border: #e8e8e8;
+      --white: #ffffff;
+      --cream: #FDFBF7;
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Outfit', sans-serif;
-      background: var(--dark);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       color: var(--text);
-      line-height: 1.8;
+      background: var(--white);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
     }
-
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      padding: 20px 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(10, 10, 15, 0.95);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(255, 255, 255, 0.97);
+      border-bottom: 1px solid var(--border);
     }
-
-    .logo {
-      font-size: 24px;
-      font-weight: 800;
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-decoration: none;
+    .nav-container {
+      max-width: 800px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; height: 64px;
     }
-
-    .back-link {
-      color: var(--text-muted);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: color 0.3s;
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 20px; font-weight: 700; color: var(--text); text-decoration: none;
     }
-
-    .back-link:hover {
-      color: var(--text);
+    .nav-logo-icon {
+      width: 32px; height: 32px; background: var(--gold); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
     }
-
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 140px 30px 80px;
+    .nav-logo-icon svg { width: 18px; height: 18px; color: white; }
+    .content {
+      max-width: 800px; margin: 0 auto; padding: 120px 24px 80px;
     }
-
-    h1 {
-      font-size: 48px;
-      font-weight: 800;
-      margin-bottom: 10px;
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    h1 { font-size: 36px; font-weight: 700; margin-bottom: 8px; }
+    .last-updated { font-size: 14px; color: var(--text-light); margin-bottom: 48px; }
+    h2 { font-size: 22px; font-weight: 600; margin: 40px 0 16px; }
+    h3 { font-size: 18px; font-weight: 600; margin: 32px 0 12px; }
+    p { margin-bottom: 16px; color: var(--text-light); }
+    ul, ol { margin: 0 0 16px 24px; color: var(--text-light); }
+    li { margin-bottom: 8px; }
+    a { color: var(--gold); }
+    .footer {
+      padding: 32px 24px; background: #1a1a1a; text-align: center;
+      font-size: 14px; color: rgba(255,255,255,0.5);
     }
-
-    .last-updated {
-      color: var(--text-muted);
-      font-size: 14px;
-      margin-bottom: 50px;
-    }
-
-    h2 {
-      font-size: 24px;
-      font-weight: 700;
-      margin-top: 50px;
-      margin-bottom: 20px;
-      color: var(--text);
-    }
-
-    h3 {
-      font-size: 18px;
-      font-weight: 600;
-      margin-top: 30px;
-      margin-bottom: 15px;
-      color: var(--text);
-    }
-
-    p {
-      color: var(--text-muted);
-      margin-bottom: 20px;
-      font-size: 16px;
-    }
-
-    ul, ol {
-      color: var(--text-muted);
-      margin-bottom: 20px;
-      padding-left: 25px;
-    }
-
-    li {
-      margin-bottom: 10px;
-    }
-
-    .highlight-box {
-      background: rgba(168, 85, 247, 0.1);
-      border: 1px solid rgba(168, 85, 247, 0.2);
-      border-radius: 12px;
-      padding: 25px;
-      margin: 30px 0;
-    }
-
-    .highlight-box p {
-      margin-bottom: 0;
-      color: var(--text);
-    }
-
-    a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      padding: 40px 60px;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 14px;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        padding: 15px 20px;
-      }
-
-      .container {
-        padding: 120px 20px 60px;
-      }
-
-      h1 {
-        font-size: 32px;
-      }
-
-      h2 {
-        font-size: 20px;
-      }
-    }
+    .footer a { color: var(--gold); text-decoration: none; }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="/" class="logo">⏱️ Punch'd</a>
-    <a href="/" class="back-link">← Back to Home</a>
+
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">
+        <div class="nav-logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        Punch'd
+      </a>
+    </div>
   </nav>
 
-  <div class="container">
+  <div class="content">
     <h1>Terms of Service</h1>
-    <p class="last-updated">Last updated: December 31, 2025</p>
+    <p class="last-updated">Last updated: January 7, 2025</p>
 
-    <div class="highlight-box">
-      <p><strong>Summary:</strong> By using Punch'd, you agree to these terms. Please read them carefully. If you don't agree, please don't use our service.</p>
-    </div>
+    <p>These Terms of Service ("Terms") govern your use of Punch'd, a time and attendance platform operated by Krynovo ("Company," "we," "us," or "our"). By accessing or using our services, you agree to be bound by these Terms.</p>
 
     <h2>1. Acceptance of Terms</h2>
-    <p>By accessing or using Punch'd ("Service"), you agree to be bound by these Terms of Service ("Terms"). If you are using the Service on behalf of an organization, you represent that you have the authority to bind that organization to these Terms.</p>
-    <p>We may update these Terms from time to time. We will notify you of any material changes by posting the new Terms on our website and updating the "Last updated" date. Your continued use of the Service after changes constitutes acceptance of the new Terms.</p>
+    <p>By creating an account, accessing, or using Punch'd, you confirm that you have read, understood, and agree to be bound by these Terms. If you do not agree, you may not use our services.</p>
 
     <h2>2. Description of Service</h2>
     <p>Punch'd provides time and attendance tracking software for businesses, including:</p>
     <ul>
-      <li>Mobile applications for iOS and Android</li>
-      <li>Web-based administrative dashboard</li>
-      <li>GPS location tracking</li>
-      <li>Facial recognition verification</li>
-      <li>Timesheet management and reporting</li>
-      <li>Cost analytics and job site management</li>
+      <li>GPS-verified clock-in and clock-out functionality</li>
+      <li>AI-powered face verification for identity confirmation</li>
+      <li>Geofencing and location tracking</li>
+      <li>Scheduling and shift management</li>
+      <li>Time reports and cost analytics</li>
+      <li>Break compliance tracking</li>
+      <li>Certified payroll generation (WH-347)</li>
     </ul>
 
     <h2>3. Account Registration</h2>
-    <h3>3.1 Account Creation</h3>
-    <p>To use Punch'd, you must create an account by providing accurate, complete, and current information. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.</p>
+    <h3>3.1 Eligibility</h3>
+    <p>You must be at least 18 years old and have the legal authority to bind your organization to these Terms.</p>
+    
+    <h3>3.2 Account Security</h3>
+    <p>You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You agree to notify us immediately of any unauthorized use.</p>
 
-    <h3>3.2 Eligibility</h3>
-    <p>You must be at least 18 years old and have the legal capacity to enter into a binding agreement to use the Service. By using Punch'd, you represent and warrant that you meet these requirements.</p>
+    <h3>3.3 Accurate Information</h3>
+    <p>You agree to provide accurate, current, and complete information during registration and to update such information to keep it accurate.</p>
 
-    <h3>3.3 Company Accounts</h3>
-    <p>If you register on behalf of a company, you represent that you have the authority to bind the company to these Terms. The account owner ("Owner") is responsible for all users added to their company account.</p>
+    <h2>4. Subscription and Billing</h2>
+    <h3>4.1 Pricing</h3>
+    <p>Our services are offered on a per-user subscription basis. Pricing is displayed on our website and may be subject to change with 30 days notice.</p>
 
-    <h2>4. Subscription and Payment</h2>
-    <h3>4.1 Free Trial</h3>
-    <p>We offer a 14-day free trial of our Professional plan. No credit card is required for the trial. At the end of the trial period, you must subscribe to continue using the Service.</p>
+    <h3>4.2 Free Trial</h3>
+    <p>We offer a 14-day free trial. No credit card is required to start. At the end of the trial, you must subscribe to continue using the service.</p>
 
-    <h3>4.2 Pricing</h3>
-    <p>Our pricing is based on the number of active users in your organization. Current pricing is available at <a href="/pricing">punchd.com/pricing</a>. We reserve the right to change pricing with 30 days notice.</p>
+    <h3>4.3 Payment</h3>
+    <p>Subscription fees are billed in advance on a monthly or annual basis. All payments are processed through Stripe and are non-refundable except as required by law or as stated in our refund policy.</p>
 
-    <h3>4.3 Billing</h3>
-    <p>Subscriptions are billed in advance on a monthly or annual basis. All fees are non-refundable except as required by law or as explicitly stated in these Terms.</p>
+    <h3>4.4 Refund Policy</h3>
+    <p>We offer a 30-day money-back guarantee for new subscribers. If you are not satisfied within the first 30 days of your paid subscription, contact us for a full refund.</p>
 
-    <h3>4.4 Payment Processing</h3>
-    <p>Payments are processed through Stripe. By providing payment information, you authorize us to charge your payment method for all fees incurred. You are responsible for keeping your payment information current.</p>
+    <h3>4.5 Cancellation</h3>
+    <p>You may cancel your subscription at any time through your account settings or by contacting us. Cancellation takes effect at the end of your current billing period.</p>
 
     <h2>5. Acceptable Use</h2>
     <p>You agree not to:</p>
     <ul>
-      <li>Use the Service for any illegal purpose or in violation of any applicable laws</li>
-      <li>Attempt to gain unauthorized access to the Service or its related systems</li>
-      <li>Interfere with or disrupt the Service or servers connected to the Service</li>
-      <li>Transmit viruses, malware, or other malicious code</li>
-      <li>Collect or harvest user data without authorization</li>
-      <li>Use the Service to send spam or unsolicited communications</li>
-      <li>Impersonate any person or entity</li>
-      <li>Reverse engineer, decompile, or disassemble the Service</li>
-      <li>Resell or redistribute the Service without authorization</li>
+      <li>Use the service for any unlawful purpose</li>
+      <li>Attempt to gain unauthorized access to our systems</li>
+      <li>Interfere with or disrupt the service</li>
+      <li>Upload malicious code or content</li>
+      <li>Resell or redistribute the service without authorization</li>
+      <li>Use the service to violate any applicable laws or regulations</li>
+      <li>Falsify time records or encourage employees to do so</li>
     </ul>
 
     <h2>6. Data and Privacy</h2>
     <h3>6.1 Your Data</h3>
-    <p>You retain ownership of all data you submit to Punch'd ("Your Data"). By using the Service, you grant us a limited license to use Your Data solely to provide and improve the Service.</p>
+    <p>You retain ownership of all data you input into Punch'd. We process your data solely to provide the service as described in our Privacy Policy.</p>
 
-    <h3>6.2 Employee Data</h3>
-    <p>If you use facial recognition features, you are responsible for obtaining appropriate consent from your employees in accordance with applicable laws. You must inform employees about data collection practices and their rights.</p>
+    <h3>6.2 Biometric Data</h3>
+    <p>Our face verification feature collects and processes biometric data. By enabling this feature, you confirm that you have obtained appropriate consent from your employees as required by applicable law.</p>
 
-    <h3>6.3 Privacy Policy</h3>
-    <p>Our collection and use of personal information is governed by our <a href="/privacy">Privacy Policy</a>, which is incorporated into these Terms by reference.</p>
+    <h3>6.3 Location Data</h3>
+    <p>Our GPS tracking feature collects location data during clock-in and clock-out. You are responsible for informing your employees about this data collection.</p>
 
-    <h3>6.4 Data Security</h3>
-    <p>We implement reasonable security measures to protect Your Data. However, no system is completely secure, and we cannot guarantee absolute security. You are responsible for maintaining the security of your account credentials.</p>
-
-    <h2>7. Intellectual Property</h2>
-    <h3>7.1 Our Property</h3>
-    <p>The Service, including all software, designs, text, graphics, and other content, is owned by Punch'd and protected by copyright, trademark, and other intellectual property laws. You may not copy, modify, or distribute our intellectual property without permission.</p>
-
-    <h3>7.2 Feedback</h3>
-    <p>If you provide feedback or suggestions about the Service, we may use them without any obligation to compensate you.</p>
-
-    <h2>8. Third-Party Services</h2>
-    <p>The Service may integrate with third-party services (e.g., Stripe for payments, mapping services for GPS). Your use of third-party services is subject to their respective terms and privacy policies. We are not responsible for third-party services.</p>
-
-    <h2>9. Disclaimer of Warranties</h2>
-    <div class="highlight-box">
-      <p>THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE SERVICE WILL BE UNINTERRUPTED, ERROR-FREE, OR SECURE.</p>
-    </div>
-
-    <h2>10. Limitation of Liability</h2>
-    <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, APEXCHRONOS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, DATA, OR GOODWILL, ARISING OUT OF OR RELATED TO YOUR USE OF THE SERVICE.</p>
-    <p>OUR TOTAL LIABILITY FOR ANY CLAIMS ARISING FROM THESE TERMS OR THE SERVICE SHALL NOT EXCEED THE AMOUNT YOU PAID US IN THE 12 MONTHS PRECEDING THE CLAIM.</p>
-
-    <h2>11. Indemnification</h2>
-    <p>You agree to indemnify and hold harmless Punch'd and its officers, directors, employees, and agents from any claims, damages, losses, or expenses (including reasonable attorneys' fees) arising from:</p>
+    <h2>7. Employer Responsibilities</h2>
+    <p>As an employer using Punch'd, you agree to:</p>
     <ul>
-      <li>Your use of the Service</li>
-      <li>Your violation of these Terms</li>
-      <li>Your violation of any third-party rights</li>
-      <li>Your employees' use of the Service</li>
+      <li>Comply with all applicable labor and employment laws</li>
+      <li>Obtain necessary consents from employees for biometric and location data collection</li>
+      <li>Use accurate wage and hour data for payroll purposes</li>
+      <li>Not use the service to discriminate against or harass employees</li>
+      <li>Maintain appropriate records as required by law</li>
     </ul>
 
-    <h2>12. Termination</h2>
-    <h3>12.1 By You</h3>
-    <p>You may cancel your subscription at any time through your account settings or by contacting support. Cancellation will be effective at the end of your current billing period.</p>
+    <h2>8. Intellectual Property</h2>
+    <p>Punch'd, including its software, design, logos, and content, is owned by Krynovo and protected by intellectual property laws. You are granted a limited, non-exclusive license to use the service for your internal business purposes.</p>
 
-    <h3>12.2 By Us</h3>
-    <p>We may suspend or terminate your access to the Service at any time for any reason, including violation of these Terms. We will provide notice when possible.</p>
+    <h2>9. Disclaimers</h2>
+    <h3>9.1 Service Availability</h3>
+    <p>We strive to maintain high availability but do not guarantee uninterrupted service. The service is provided "as is" without warranties of any kind.</p>
 
-    <h3>12.3 Effect of Termination</h3>
-    <p>Upon termination, your right to use the Service will cease immediately. We may delete Your Data after 30 days following termination. Sections that by their nature should survive termination will survive.</p>
+    <h3>9.2 Compliance</h3>
+    <p>While Punch'd includes features for compliance (such as break tracking and certified payroll), you are solely responsible for ensuring compliance with applicable laws. We do not provide legal advice.</p>
 
-    <h2>13. Dispute Resolution</h2>
-    <h3>13.1 Informal Resolution</h3>
-    <p>Before filing any claim, you agree to contact us at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="39555c5e58557958495c415a514b5657564a175a5654">[email&#160;protected]</a> to attempt to resolve the dispute informally.</p>
+    <h2>10. Limitation of Liability</h2>
+    <p>To the maximum extent permitted by law, Krynovo shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits, revenue, data, or business opportunities arising from your use of the service.</p>
+    <p>Our total liability for any claim arising from these Terms or your use of the service shall not exceed the amount you paid us in the 12 months preceding the claim.</p>
 
-    <h3>13.2 Arbitration</h3>
-    <p>Any disputes not resolved informally shall be resolved through binding arbitration in accordance with the American Arbitration Association rules. The arbitration shall take place in Delaware, USA.</p>
+    <h2>11. Indemnification</h2>
+    <p>You agree to indemnify and hold harmless Krynovo and its officers, directors, employees, and agents from any claims, damages, losses, or expenses arising from your use of the service or violation of these Terms.</p>
 
-    <h3>13.3 Class Action Waiver</h3>
-    <p>You agree to resolve disputes with us on an individual basis and waive your right to participate in class actions.</p>
+    <h2>12. Modifications</h2>
+    <p>We may modify these Terms at any time. We will notify you of material changes by email or through the service. Your continued use after such notice constitutes acceptance of the modified Terms.</p>
 
-    <h2>14. General Provisions</h2>
-    <h3>14.1 Governing Law</h3>
-    <p>These Terms are governed by the laws of the State of Delaware, USA, without regard to conflict of law principles.</p>
+    <h2>13. Termination</h2>
+    <p>We may suspend or terminate your access to the service at any time for violation of these Terms or for any other reason with notice. Upon termination, your right to use the service ceases immediately.</p>
 
-    <h3>14.2 Entire Agreement</h3>
-    <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and Punch'd regarding the Service.</p>
+    <h2>14. Governing Law</h2>
+    <p>These Terms are governed by the laws of the State of California, without regard to conflict of law principles. Any disputes shall be resolved in the courts of California.</p>
 
-    <h3>14.3 Severability</h3>
-    <p>If any provision of these Terms is found unenforceable, the remaining provisions will continue in effect.</p>
+    <h2>15. Contact</h2>
+    <p>For questions about these Terms, please contact us at:</p>
+    <p>Email: <a href="mailto:krynovo@gmail.com">krynovo@gmail.com</a></p>
+    <p>Punch'd is a product of Krynovo.</p>
+  </div>
 
-    <h3>14.4 No Waiver</h3>
-    <p>Our failure to enforce any provision of these Terms does not constitute a waiver of that provision.</p>
+  <footer class="footer">
+    <p>© 2025 Punch'd, a <a href="https://krynovo.com" target="_blank">Krynovo</a> product. All rights reserved.</p>
+  </footer>
 
-    <h3>14.5 Assignment</h3>
-    <p>You may not assign these Terms without our consent. We may assign these Terms without restriction.</p>
-
-    <h2>15. Contact Us</h2>
-    <p>If you have any questions about these Terms, please contact us:</p>
-    <ul>
-      <li>Email: <a href="/cdn-cgi/l/email-protection#8ce0e9ebede0ccedfce9f4efe4fee3e2e3ffa2efe3e1"><span class="__cf_email__" data-cfemail="c
+</body>
+</html>
